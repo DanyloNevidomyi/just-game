@@ -1,40 +1,61 @@
 [gd_scene format=3 uid="uid://ddsafdp6qq5j2"]
 
+[ext_resource type="VideoStream" uid="uid://oj3ga8ofwjwh" path="res://MainSceneFootage.ogv" id="1_wc2lj"]
 [ext_resource type="Script" uid="uid://dm1cjd4u7k07q" path="res://mainMenu.gd" id="1_wut1r"]
 [ext_resource type="Texture2D" uid="uid://dqqidavspw6mv" path="res://Billy.jpg" id="2_83s16"]
 [ext_resource type="AudioStream" uid="uid://c4ypki7utdpmb" path="res://billySound.mp3" id="3_w7d22"]
 
-[node name="Node2D" type="Node2D" unique_id=1742957802]
-
-[node name="ButtonManager" type="Control" parent="." unique_id=408855528]
+[node name="Node2D" type="Control" unique_id=2088601520]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=1920907995]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("1_wc2lj")
+autoplay = true
+expand = true
+loop = true
+
+[node name="ButtonManager" type="VBoxContainer" parent="." unique_id=1790925309]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -93.0
+offset_top = -92.5
+offset_right = 93.0
+offset_bottom = 92.5
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_wut1r")
 
 [node name="Start" type="Button" parent="ButtonManager" unique_id=1174111996 groups=["menu_buttons"]]
-layout_mode = 0
-offset_left = 448.0
-offset_top = 192.0
-offset_right = 704.0
-offset_bottom = 256.0
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
 text = "Start"
 
 [node name="Jumpscare" type="Button" parent="ButtonManager" unique_id=416632850 groups=["menu_buttons"]]
-layout_mode = 0
-offset_left = 448.0
-offset_top = 288.0
-offset_right = 704.0
-offset_bottom = 352.0
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
 text = "Jumpscare"
 
 [node name="Quit" type="Button" parent="ButtonManager" unique_id=450741869 groups=["menu_buttons"]]
-layout_mode = 0
-offset_left = 448.0
-offset_top = 384.0
-offset_right = 704.0
-offset_bottom = 448.0
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
 text = "Quit"
 
 [node name="billy" type="Sprite2D" parent="." unique_id=928351010]
