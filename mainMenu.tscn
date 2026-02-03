@@ -16,25 +16,25 @@ script = ExtResource("1_wut1r")
 [node name="Start" type="Button" parent="ButtonManager" unique_id=1174111996 groups=["menu_buttons"]]
 layout_mode = 0
 offset_left = 448.0
-offset_top = 176.0
+offset_top = 192.0
 offset_right = 704.0
-offset_bottom = 243.0
+offset_bottom = 256.0
 text = "Start"
 
 [node name="Jumpscare" type="Button" parent="ButtonManager" unique_id=416632850 groups=["menu_buttons"]]
 layout_mode = 0
 offset_left = 448.0
-offset_top = 256.0
+offset_top = 288.0
 offset_right = 704.0
-offset_bottom = 323.0
+offset_bottom = 352.0
 text = "Jumpscare"
 
 [node name="Quit" type="Button" parent="ButtonManager" unique_id=450741869 groups=["menu_buttons"]]
 layout_mode = 0
 offset_left = 448.0
-offset_top = 336.0
+offset_top = 384.0
 offset_right = 704.0
-offset_bottom = 400.0
+offset_bottom = 448.0
 text = "Quit"
 
 [node name="billy" type="Sprite2D" parent="." unique_id=928351010]

@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://c61rg1sccg7ai"]
+
+[ext_resource type="Script" uid="uid://cbhmlh418dllu" path="res://achivement.gd" id="1_eoyd8"]
+
+[sub_resource type="Animation" id="Animation_u4x5l"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -64)]
+}
+
+[sub_resource type="Animation" id="Animation_pnt0f"]
+resource_name = "achivement"
+length = 3.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 3, 3.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -64), Vector2(0, 0), Vector2(0, 0), Vector2(0, -64)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r0mo1"]
+_data = {
+&"RESET": SubResource("Animation_u4x5l"),
+&"achivement": SubResource("Animation_pnt0f")
+}
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=247991964]
+script = ExtResource("1_eoyd8")
+
+[node name="Panel" type="Panel" parent="." unique_id=1973195743]
+offset_top = -64.0
+offset_right = 256.0
+
+[node name="AchivementGet" type="Label" parent="Panel" unique_id=11447637]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 8.0
+offset_right = 189.0
+offset_bottom = 31.0
+text = "Achivement get!"
+
+[node name="AchivementName" type="Label" parent="Panel" unique_id=687911182]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 32.0
+offset_right = 104.0
+offset_bottom = 55.0
+
+[node name="TextureRect" type="TextureRect" parent="Panel" unique_id=585111211]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 56.0
+offset_bottom = 56.0
+expand_mode = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1646740555]
+root_node = NodePath("../Panel")
+libraries/ = SubResource("AnimationLibrary_r0mo1")

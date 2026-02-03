@@ -1,5 +1,6 @@
 extends Control
 
+
 func _on_start_pressed() -> void:
 	get_tree().change_scene_to_file("res://GameScene.tscn")
 
@@ -12,8 +13,11 @@ func _on_jumpscare_pressed() -> void:
 	if chance == 1:
 		$"../billy".modulate = Color.RED 
 		$"../billyIsHere".pitch_scale = 0.8 
+		AchievementManager.unlock("jumpscare_red", "Billy is angry...")
 	else:
+		$"../billy".modulate = Color.WHITE 
 		$"../billyIsHere".pitch_scale = 1.0
+		AchievementManager.unlock("jumpscare", "You saw Billy!!!")
 	
 	$"../billyIsHere".play()
 	await get_tree().create_timer(5.0).timeout
