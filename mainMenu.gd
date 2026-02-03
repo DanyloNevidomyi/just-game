@@ -8,6 +8,7 @@ func _on_start_pressed() -> void:
 
 func _on_jumpscare_pressed() -> void:
 	set_buttons_disabled(true)
+	$"../VideoStreamPlayer".paused = true
 	$"../billy".visible = true;
 	var chance = randi_range(1, 10)
 	if chance == 1:
@@ -23,13 +24,20 @@ func _on_jumpscare_pressed() -> void:
 	await get_tree().create_timer(5.0).timeout
 	$"../billy".visible = false
 	set_buttons_disabled(false)
+	$"../VideoStreamPlayer".paused = false
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()
 	
 func set_buttons_disabled(is_disabled: bool) -> void:
-	# Отримуємо всі вузли в групі "buttons" або просто шукаємо всі Button вузли в сцені
-	# Найшвидший спосіб для невеликого меню:
 	for node in get_tree().get_nodes_in_group("menu_buttons"):
 		if node is Button:
 			node.disabled = is_disabled
+
+
+func _on_h_slider_value_changed(value: float) -> void:
+	
+	$Label.text = "Volume: "+str($HSlider.value)
+	var bus_index = AudioServer.get_bus_index("SFX")
+	AudioServer.set_bus_volume_db(bus_index, linear_to_db(value))
+	AudioServer.set_bus_mute(bus_index, value < 0.01)

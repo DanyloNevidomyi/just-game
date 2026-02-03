@@ -24,6 +24,7 @@ stream = ExtResource("1_wc2lj")
 autoplay = true
 expand = true
 loop = true
+bus = &"SFX"
 
 [node name="ButtonManager" type="VBoxContainer" parent="." unique_id=1790925309]
 layout_mode = 1
@@ -32,10 +33,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -93.0
-offset_top = -92.5
-offset_right = 93.0
-offset_bottom = 92.5
+offset_left = -150.0
+offset_top = -99.5
+offset_right = 150.0
+offset_bottom = 132.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_wut1r")
@@ -58,16 +59,28 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 35
 text = "Quit"
 
+[node name="Label" type="Label" parent="ButtonManager" unique_id=1232000911]
+layout_mode = 2
+text = "Volume: 0.2"
+
+[node name="HSlider" type="HSlider" parent="ButtonManager" unique_id=79320781]
+layout_mode = 2
+max_value = 1.0
+step = 0.05
+value = 0.2
+
 [node name="billy" type="Sprite2D" parent="." unique_id=928351010]
 visible = false
-position = Vector2(579.5, 321.875)
-scale = Vector2(5.0752215, 2.8508968)
+position = Vector2(576, 324)
+scale = Vector2(5.097346, 2.9058294)
 texture = ExtResource("2_83s16")
 
 [node name="billyIsHere" type="AudioStreamPlayer2D" parent="." unique_id=343052141]
 stream = ExtResource("3_w7d22")
 volume_db = 3.493
+bus = &"SFX"
 
 [connection signal="pressed" from="ButtonManager/Start" to="ButtonManager" method="_on_start_pressed"]
 [connection signal="pressed" from="ButtonManager/Jumpscare" to="ButtonManager" method="_on_jumpscare_pressed"]
 [connection signal="pressed" from="ButtonManager/Quit" to="ButtonManager" method="_on_quit_pressed"]
+[connection signal="value_changed" from="ButtonManager/HSlider" to="ButtonManager" method="_on_h_slider_value_changed"]
