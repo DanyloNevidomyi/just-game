@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://co243epvg8u5k"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f24su"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_eqhe0"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_f24su"]
+bounce = 0.48
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_k77ap"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_haeiw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b5kf5"]
+albedo_color = Color(0.94077444, 0.56283814, 0.2619972, 1)
+metallic = 0.4
+
+[node name="Game" type="Node3D" unique_id=754485396]
+
+[node name="World" type="Node3D" parent="." unique_id=1853378280]
+
+[node name="Floor" type="StaticBody3D" parent="World" unique_id=1733413621]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Floor" unique_id=1941751925]
+transform = Transform3D(10, 0, 0, 0, 0.1, 0, 0, 0, 10, 0, 0, 0)
+shape = SubResource("BoxShape3D_f24su")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="World/Floor/CollisionShape3D" unique_id=1303372184]
+mesh = SubResource("BoxMesh_eqhe0")
+skeleton = NodePath("../..")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="World" unique_id=1692241218]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.9143004, 0)
+mass = 23.21
+physics_material_override = SubResource("PhysicsMaterial_f24su")
+inertia = Vector3(0, 61.64, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/RigidBody3D" unique_id=324508091]
+shape = SubResource("SphereShape3D_k77ap")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="World/RigidBody3D/CollisionShape3D" unique_id=1006706304]
+mesh = SubResource("SphereMesh_haeiw")
+surface_material_override/0 = SubResource("StandardMaterial3D_b5kf5")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=730290737]
+transform = Transform3D(-0.01122229, 0, 0.99993706, 0, 1, 0, -0.99993706, 0, -0.01122229, 8.163602, 4.6936064, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1723937067]
+transform = Transform3D(1, 0, 0, 0, -0.046077784, 0.99893785, 0, -0.99893785, -0.046077784, 0, 10.732499, 0)

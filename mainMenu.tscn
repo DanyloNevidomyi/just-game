@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://ddsafdp6qq5j2"]
+
+[ext_resource type="Script" uid="uid://dm1cjd4u7k07q" path="res://mainMenu.gd" id="1_wut1r"]
+[ext_resource type="Texture2D" uid="uid://dqqidavspw6mv" path="res://Billy.jpg" id="2_83s16"]
+[ext_resource type="AudioStream" uid="uid://c4ypki7utdpmb" path="res://billySound.mp3" id="3_w7d22"]
+
+[node name="Node2D" type="Node2D" unique_id=1742957802]
+
+[node name="ButtonManager" type="Control" parent="." unique_id=408855528]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_wut1r")
+
+[node name="Start" type="Button" parent="ButtonManager" unique_id=1174111996 groups=["menu_buttons"]]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 176.0
+offset_right = 704.0
+offset_bottom = 243.0
+text = "Start"
+
+[node name="Jumpscare" type="Button" parent="ButtonManager" unique_id=416632850 groups=["menu_buttons"]]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 256.0
+offset_right = 704.0
+offset_bottom = 323.0
+text = "Jumpscare"
+
+[node name="Quit" type="Button" parent="ButtonManager" unique_id=450741869 groups=["menu_buttons"]]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 336.0
+offset_right = 704.0
+offset_bottom = 400.0
+text = "Quit"
+
+[node name="billy" type="Sprite2D" parent="." unique_id=928351010]
+visible = false
+position = Vector2(579.5, 321.875)
+scale = Vector2(5.0752215, 2.8508968)
+texture = ExtResource("2_83s16")
+
+[node name="billyIsHere" type="AudioStreamPlayer2D" parent="." unique_id=343052141]
+stream = ExtResource("3_w7d22")
+volume_db = 3.493
+
+[connection signal="pressed" from="ButtonManager/Start" to="ButtonManager" method="_on_start_pressed"]
+[connection signal="pressed" from="ButtonManager/Jumpscare" to="ButtonManager" method="_on_jumpscare_pressed"]
+[connection signal="pressed" from="ButtonManager/Quit" to="ButtonManager" method="_on_quit_pressed"]
