@@ -4,15 +4,15 @@
 [ext_resource type="Texture2D" uid="uid://s1ineixeqcne" path="res://ebaka2.png" id="2_ga5te"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fy5us"]
-size = Vector2(202.5, 212)
+size = Vector2(120, 175)
 
 [node name="Monster" type="CharacterBody2D" unique_id=1708183715]
 script = ExtResource("1_mrqeg")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1923116534]
-position = Vector2(296, -103)
-texture = ExtResource("2_ga5te")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1724714493]
-position = Vector2(289.75, -106)
+scale = Vector2(0.697, 0.697)
 shape = SubResource("RectangleShape2D_fy5us")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1923116534]
+scale = Vector2(0.697, 0.697)
+texture = ExtResource("2_ga5te")
