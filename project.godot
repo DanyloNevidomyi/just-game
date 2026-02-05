@@ -22,7 +22,3 @@ config/icon="res://icon.svg"
 [autoload]
 
 AchievementManager="*uid://cw2hno8rlqapp"
-
-[display]
-
-window/size/mode=2

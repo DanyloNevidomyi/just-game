@@ -14,4 +14,4 @@ func _physics_process(_delta):
 
 func _on_kill_zone_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
-		get_tree().change_scene_to_file("res://game_over_scene.tscn")
+		get_tree().call_deferred("change_scene_to_file", "res://game_over_scene.tscn")

@@ -7,22 +7,25 @@ func _on_start_pressed() -> void:
 
 
 func _on_jumpscare_pressed() -> void:
+	$"../billyIsHere".play()
 	set_buttons_disabled(true)
 	$"../VideoStreamPlayer".paused = true
-	$"../billy".visible = true;
+	$"../billy2".visible = true;
 	var chance = randi_range(1, 10)
 	if chance == 1:
-		$"../billy".modulate = Color.RED 
+		$"../billy2".modulate = Color.RED 
 		$"../billyIsHere".pitch_scale = 0.8 
+		
 		AchievementManager.unlock("jumpscare_red", "Billy is angry...")
 	else:
-		$"../billy".modulate = Color.WHITE 
+		$"../billy2".modulate = Color.WHITE 
 		$"../billyIsHere".pitch_scale = 1.0
+		
 		AchievementManager.unlock("jumpscare", "You saw Billy!!!")
 	
-	$"../billyIsHere".play()
+	
 	await get_tree().create_timer(5.0).timeout
-	$"../billy".visible = false
+	$"../billy2".visible = false
 	set_buttons_disabled(false)
 	$"../VideoStreamPlayer".paused = false
 
