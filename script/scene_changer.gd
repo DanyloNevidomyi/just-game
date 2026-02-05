@@ -15,7 +15,7 @@ func fade_to_scene(path: String, speed: float = 2.0):
 	
 	tween.finished.connect(func():
 		get_tree().change_scene_to_file(path)
-		
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		# Після завантаження нової сцени плавно прибираємо чорний екран
 		var tween_in = create_tween()
 		tween_in.tween_property(rect, "modulate:a", 0.0, speed)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://s1ineixeqcne"
-path="res://.godot/imported/ebaka2.png-c12735c88d9cca757bf88ac137d01a4e.ctex"
+uid="uid://cws3ld48iyhrq"
+path="res://.godot/imported/sprite_mainBig.png-7a91cffd0f6ac71153cd0f6b1c9ecb36.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ebaka2.png"
-dest_files=["res://.godot/imported/ebaka2.png-c12735c88d9cca757bf88ac137d01a4e.ctex"]
+source_file="res://pics/sprite_mainBig.png"
+dest_files=["res://.godot/imported/sprite_mainBig.png-7a91cffd0f6ac71153cd0f6b1c9ecb36.ctex"]
 
 [params]
 

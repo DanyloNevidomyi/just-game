@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bmvt7yucd5wkk"]
 
-[ext_resource type="Script" uid="uid://vrc5o18gauw3" path="res://game_over_scene.gd" id="1_c4ct6"]
-[ext_resource type="VideoStream" uid="uid://dyhxbb1p26sbi" path="res://GameOver.ogv" id="2_ce141"]
+[ext_resource type="Script" uid="uid://vrc5o18gauw3" path="res://script/game_over_scene.gd" id="1_c4ct6"]
+[ext_resource type="VideoStream" uid="uid://dyhxbb1p26sbi" path="res://video/GameOver.ogv" id="2_ce141"]
 
 [node name="GameOverScene" type="Control" unique_id=1308529849]
 layout_mode = 3

@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://ddsafdp6qq5j2"]
 
-[ext_resource type="VideoStream" uid="uid://oj3ga8ofwjwh" path="res://MainSceneFootage.ogv" id="1_wc2lj"]
-[ext_resource type="Script" uid="uid://dm1cjd4u7k07q" path="res://mainMenu.gd" id="1_wut1r"]
-[ext_resource type="Texture2D" uid="uid://dqqidavspw6mv" path="res://Billy.jpg" id="2_83s16"]
-[ext_resource type="AudioStream" uid="uid://eq6trgc812ki" path="res://blue-lobster-meme.wav" id="4_wc2lj"]
+[ext_resource type="VideoStream" uid="uid://oj3ga8ofwjwh" path="res://video/MainSceneFootage.ogv" id="1_rhxxf"]
+[ext_resource type="Script" uid="uid://dm1cjd4u7k07q" path="res://script/mainMenu.gd" id="2_34t5y"]
+[ext_resource type="Texture2D" uid="uid://dqqidavspw6mv" path="res://pics/Billy.jpg" id="3_835ab"]
+[ext_resource type="AudioStream" uid="uid://eq6trgc812ki" path="res://sound/mainMenu/blue-lobster-meme.wav" id="4_2b2bh"]
 
 [node name="Node2D" type="Control" unique_id=2088601520]
 layout_mode = 3
@@ -20,7 +20,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-stream = ExtResource("1_wc2lj")
+stream = ExtResource("1_rhxxf")
 volume_db = -10.0
 autoplay = true
 expand = true
@@ -40,7 +40,7 @@ offset_right = 150.0
 offset_bottom = 132.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_wut1r")
+script = ExtResource("2_34t5y")
 
 [node name="Start" type="Button" parent="ButtonManager" unique_id=1174111996 groups=["menu_buttons"]]
 custom_minimum_size = Vector2(300, 0)
@@ -78,18 +78,18 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_83s16")
+texture = ExtResource("3_835ab")
 expand_mode = 1
 
 [node name="billy" type="Sprite2D" parent="." unique_id=928351010]
 visible = false
 position = Vector2(576, 324)
 scale = Vector2(5.097346, 2.9058294)
-texture = ExtResource("2_83s16")
+texture = ExtResource("3_835ab")
 
 [node name="billyIsHere" type="AudioStreamPlayer2D" parent="." unique_id=343052141]
 position = Vector2(-940, -494)
-stream = ExtResource("4_wc2lj")
+stream = ExtResource("4_2b2bh")
 max_distance = 19955.0
 bus = &"SFX"
 

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c61rg1sccg7ai"]
 
-[ext_resource type="Script" uid="uid://cbhmlh418dllu" path="res://achivement.gd" id="1_eoyd8"]
+[ext_resource type="Script" uid="uid://cbhmlh418dllu" path="res://script/achivement.gd" id="1_eoyd8"]
 
 [sub_resource type="Animation" id="Animation_u4x5l"]
 length = 0.001

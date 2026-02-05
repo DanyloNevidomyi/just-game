@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://eq6trgc812ki"
-path="res://.godot/imported/blue-lobster-meme.wav-4bd0443aedd221e7c2e912e30e1afafc.sample"
+path="res://.godot/imported/blue-lobster-meme.wav-31e6f85ca73829d5cf94b409214ff6d1.sample"
 
 [deps]
 
-source_file="res://blue-lobster-meme.wav"
-dest_files=["res://.godot/imported/blue-lobster-meme.wav-4bd0443aedd221e7c2e912e30e1afafc.sample"]
+source_file="res://sound/mainMenu/blue-lobster-meme.wav"
+dest_files=["res://.godot/imported/blue-lobster-meme.wav-31e6f85ca73829d5cf94b409214ff6d1.sample"]
 
 [params]
 

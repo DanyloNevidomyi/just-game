@@ -1,6 +1,6 @@
 extends Node
 
-var achievement_scene = preload("res://achivement.tscn")
+var achievement_scene = preload("res://scene/achivement.tscn")
 
 # Список розблокованих ачівок 
 var unlocked_achievements = []
@@ -8,11 +8,11 @@ var unlocked_achievements = []
 # Словник: Ключ = назва, Значення = шлях до картинки
 var icons = {
 	"jumpscare": {
-		"tex": preload("res://Billy.jpg"),
+		"tex": preload("res://pics/Billy.jpg"),
 		"color": Color.WHITE # Деф колір
 	},
 	"jumpscare_red": {
-		"tex": preload("res://Billy.jpg"),
+		"tex": preload("res://pics/Billy.jpg"),
 		"color": Color.RED # Новий колір
 	}
 }
@@ -26,7 +26,7 @@ func unlock(id: String, display_text: String):
 	add_child(ach)
 	
 	
-	var data = icons.get(id, {"tex": preload("res://icon.svg"), "color": Color.WHITE})
+	var data = icons.get(id, {"tex": preload("res://pics/icon.svg"), "color": Color.WHITE})
 	
 	
 	ach.display(display_text, data.tex, data.color)

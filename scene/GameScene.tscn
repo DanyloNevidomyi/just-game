@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://co243epvg8u5k"]
 
-[ext_resource type="Script" uid="uid://dlrfhwqlepg1c" path="res://3d_player.gd" id="1_eqhe0"]
-[ext_resource type="Script" uid="uid://broq08i0ne8sl" path="res://3d_button.gd" id="1_k77ap"]
+[ext_resource type="Script" uid="uid://dlrfhwqlepg1c" path="res://script/3d_player.gd" id="1_eqhe0"]
+[ext_resource type="Script" uid="uid://broq08i0ne8sl" path="res://script/3d_button.gd" id="1_k77ap"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_f24su"]
 

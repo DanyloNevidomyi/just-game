@@ -7,4 +7,4 @@ func _ready():
 
 func _on_video_finished():
 	# Коли відео закінчилось -> вантажимо Головне Меню
-	get_tree().change_scene_to_file("res://mainMenu.tscn") # Перевір назву свого файлу меню!
+	get_tree().change_scene_to_file("res://scene/mainMenu.tscn") # Перевір назву свого файлу меню!
