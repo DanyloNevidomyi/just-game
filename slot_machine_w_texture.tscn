@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cdbhxgrsbb1qm"]
+
+[ext_resource type="PackedScene" uid="uid://btqea1liftgqo" path="res://3d/slot/SlotMachineNoTexture.glb" id="1_nmlme"]
+[ext_resource type="Texture2D" uid="uid://cvptbbukuf1wu" path="res://3d/slot/BestPixelArtEver.png" id="2_i6cki"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_knkoj"]
+albedo_texture = ExtResource("2_i6cki")
+texture_filter = 0
+
+[node name="SlotMachineNoTexture" unique_id=239871502 instance=ExtResource("1_nmlme")]
+
+[node name="Cube" parent="." index="0" unique_id=1201540616]
+surface_material_override/0 = SubResource("StandardMaterial3D_knkoj")

@@ -2,12 +2,17 @@
 
 [ext_resource type="Script" uid="uid://c3mxoh4vqelq5" path="res://scene/slot_machine.gd" id="1_cgo26"]
 [ext_resource type="Script" uid="uid://broq08i0ne8sl" path="res://script/3d_button.gd" id="1_oebtt"]
+[ext_resource type="PackedScene" uid="uid://cdbhxgrsbb1qm" path="res://slot_machine_w_texture.tscn" id="2_dtapd"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_haeiw"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_dtapd"]
+size = Vector3(2.0032806, 2.1590576, 1.0483398)
 
-[sub_resource type="BoxMesh" id="BoxMesh_b5kf5"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_vdvju"]
+size = Vector3(1.1430054, 0.58258057, 0.9902344)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hvuor"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_b5kf5"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k77ap"]
 albedo_color = Color(1, 0.1254902, 0, 1)
@@ -16,14 +21,19 @@ albedo_color = Color(1, 0.1254902, 0, 1)
 script = ExtResource("1_cgo26")
 start_button = NodePath("Button")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1756939508]
-shape = SubResource("BoxShape3D_haeiw")
+[node name="SlotMachineNoTexture" parent="." unique_id=239871502 instance=ExtResource("2_dtapd")]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 1.1641532e-10, 5.9604645e-08, 7.450581e-09)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D" unique_id=1676180852]
-mesh = SubResource("BoxMesh_b5kf5")
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=668548983]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0013809204, 1.7867949, -0.22997403)
+shape = SubResource("BoxShape3D_dtapd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1633769260]
+transform = Transform3D(1.7654895, 0, 0, 0, 2.9073265, 0, 0, 0, 1.6650045, 0.0011314526, -0.15145284, 0.08617699)
+shape = SubResource("BoxShape3D_vdvju")
 
 [node name="Button" type="StaticBody3D" parent="." unique_id=1127026179 groups=["interactable"]]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.5, 0)
+transform = Transform3D(0.29999998, 0, 0, 0, 0.26895753, -0.13289788, 0, 0.13289788, 0.26895753, 0, 0.93655217, 0.49370956)
 script = ExtResource("1_oebtt")
 push_depth = 0.5
 push_speed = 0.05
@@ -33,5 +43,5 @@ shape = SubResource("BoxShape3D_hvuor")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Button/CollisionShape3D" unique_id=2041541016 groups=["interactable"]]
 mesh = SubResource("BoxMesh_b5kf5")
-skeleton = NodePath("../../../CollisionShape3D/MeshInstance3D")
+skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_k77ap")

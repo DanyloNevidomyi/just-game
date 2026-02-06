@@ -70,7 +70,7 @@ mesh = SubResource("SphereMesh_haeiw")
 surface_material_override/0 = SubResource("StandardMaterial3D_b5kf5")
 
 [node name="Slot_machine" parent="World" unique_id=1768851604 instance=ExtResource("1_g0iv5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.025398, 0, -4.011625)
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 3.0061467, 0.73531854, -4.405961)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1723937067]
 transform = Transform3D(1, 0, 0, 0, -0.046077784, 0.99893785, 0, -0.99893785, -0.046077784, 0, 10.732499, 0)
