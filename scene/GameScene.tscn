@@ -87,7 +87,7 @@ shape = SubResource("BoxShape3D_haeiw")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="World/Automat/CollisionShape3D" unique_id=1859786509]
 mesh = SubResource("BoxMesh_b5kf5")
 
-[node name="Button" type="StaticBody3D" parent="World/Automat" unique_id=2074257285]
+[node name="Button" type="StaticBody3D" parent="World/Automat" unique_id=2074257285 groups=["interactable"]]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.5, 0)
 script = ExtResource("1_k77ap")
 push_depth = 0.5
@@ -96,7 +96,7 @@ push_speed = 0.05
 [node name="CollisionShape3D" type="CollisionShape3D" parent="World/Automat/Button" unique_id=1350013727]
 shape = SubResource("BoxShape3D_hvuor")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="World/Automat/Button/CollisionShape3D" unique_id=26860215]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="World/Automat/Button/CollisionShape3D" unique_id=26860215 groups=["interactable"]]
 mesh = SubResource("BoxMesh_b5kf5")
 skeleton = NodePath("../../../CollisionShape3D/MeshInstance3D")
 surface_material_override/0 = SubResource("StandardMaterial3D_k77ap")
