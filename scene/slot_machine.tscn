@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://bjd6weygrgvc8"]
+
+[ext_resource type="Script" uid="uid://broq08i0ne8sl" path="res://script/3d_button.gd" id="1_oebtt"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_haeiw"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_b5kf5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hvuor"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k77ap"]
+albedo_color = Color(1, 0.1254902, 0, 1)
+
+[node name="Automat" type="StaticBody3D" unique_id=1768851604]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1756939508]
+shape = SubResource("BoxShape3D_haeiw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D" unique_id=1676180852]
+mesh = SubResource("BoxMesh_b5kf5")
+
+[node name="Button" type="StaticBody3D" parent="." unique_id=1127026179 groups=["interactable"]]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.5, 0)
+script = ExtResource("1_oebtt")
+push_depth = 0.5
+push_speed = 0.05
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Button" unique_id=2125153887]
+shape = SubResource("BoxShape3D_hvuor")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Button/CollisionShape3D" unique_id=2041541016 groups=["interactable"]]
+mesh = SubResource("BoxMesh_b5kf5")
+skeleton = NodePath("../../../CollisionShape3D/MeshInstance3D")
+surface_material_override/0 = SubResource("StandardMaterial3D_k77ap")

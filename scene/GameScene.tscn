@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://co243epvg8u5k"]
 
-[ext_resource type="Script" uid="uid://broq08i0ne8sl" path="res://script/3d_button.gd" id="1_k77ap"]
+[ext_resource type="PackedScene" uid="uid://bjd6weygrgvc8" path="res://scene/slot_machine.tscn" id="1_g0iv5"]
 [ext_resource type="PackedScene" uid="uid://dybgnsfbb7bjr" path="res://scene/3d_player.tscn" id="2_g0iv5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_f24su"]
@@ -26,15 +26,6 @@ bounce = 0.48
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b5kf5"]
 albedo_color = Color(0.94077444, 0.56283814, 0.2619972, 1)
 metallic = 0.4
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_haeiw"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_b5kf5"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_hvuor"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k77ap"]
-albedo_color = Color(1, 0.1254902, 0, 1)
 
 [node name="Game" type="Node3D" unique_id=754485396]
 
@@ -71,35 +62,15 @@ physics_material_override = SubResource("PhysicsMaterial_f24su")
 inertia = Vector3(0, 61.64, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="World/Ball" unique_id=324508091]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.1030607, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.46224165, 0)
 shape = SubResource("SphereShape3D_k77ap")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="World/Ball/CollisionShape3D" unique_id=1006706304]
 mesh = SubResource("SphereMesh_haeiw")
 surface_material_override/0 = SubResource("StandardMaterial3D_b5kf5")
 
-[node name="Automat" type="StaticBody3D" parent="World" unique_id=1910794556]
+[node name="Slot_machine" parent="World" unique_id=1768851604 instance=ExtResource("1_g0iv5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.025398, 0, -4.011625)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Automat" unique_id=1434256391]
-shape = SubResource("BoxShape3D_haeiw")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="World/Automat/CollisionShape3D" unique_id=1859786509]
-mesh = SubResource("BoxMesh_b5kf5")
-
-[node name="Button" type="StaticBody3D" parent="World/Automat" unique_id=2074257285 groups=["interactable"]]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.5, 0)
-script = ExtResource("1_k77ap")
-push_depth = 0.5
-push_speed = 0.05
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Automat/Button" unique_id=1350013727]
-shape = SubResource("BoxShape3D_hvuor")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="World/Automat/Button/CollisionShape3D" unique_id=26860215 groups=["interactable"]]
-mesh = SubResource("BoxMesh_b5kf5")
-skeleton = NodePath("../../../CollisionShape3D/MeshInstance3D")
-surface_material_override/0 = SubResource("StandardMaterial3D_k77ap")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1723937067]
 transform = Transform3D(1, 0, 0, 0, -0.046077784, 0.99893785, 0, -0.99893785, -0.046077784, 0, 10.732499, 0)

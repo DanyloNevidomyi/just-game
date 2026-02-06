@@ -11,10 +11,15 @@ func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func _unhandled_input(event):
-	if event is InputEventMouseMotion:
+	if event.is_action_pressed("ui_cancel"):
+		toggle_mouse_mode()
+# Перевіряємо, чи це рух миші ТА чи миша зараз "захоплена" грою
+	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		head.rotate_y(-event.relative.x * SENSITIVITY)
 		camera.rotate_x(-event.relative.y * SENSITIVITY)
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-80), deg_to_rad(80))
+		
+
 
 func _physics_process(_delta):
 	var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
@@ -34,3 +39,11 @@ func _physics_process(_delta):
 			var collider = ray_cast.get_collider()
 			if collider.has_method("interact"):
 				collider.interact()
+				
+func toggle_mouse_mode():
+	if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		# Тут можна викликати відкриття меню: get_tree().paused = true
+	else:
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		# Тут можна закрити меню: get_tree().paused = false
