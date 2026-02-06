@@ -10,20 +10,31 @@ const SENSITIVITY = 0.003
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
+# Обробка всіх натискань клавіш та миші тут
 func _unhandled_input(event):
 	if event.is_action_pressed("ui_cancel"):
 		toggle_mouse_mode()
-# Перевіряємо, чи це рух миші ТА чи миша зараз "захоплена" грою
+
+	# Поворот камери
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		head.rotate_y(-event.relative.x * SENSITIVITY)
 		camera.rotate_x(-event.relative.y * SENSITIVITY)
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-80), deg_to_rad(80))
-		
 
+	# Взаємодія
+	# TODO: Тре "ui_accept" на "interact" замінити
+	
+	if event.is_action_pressed("ui_accept"): 
+		if ray_cast.is_colliding():
+			var collider = ray_cast.get_collider()
+			if collider.has_method("interact"):
+				collider.interact()
 
+# Фізика тільки для руху тіла
 func _physics_process(_delta):
 	var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	var direction = (head.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
@@ -33,17 +44,8 @@ func _physics_process(_delta):
 
 	move_and_slide()
 
-	# Взаємодія
-	if Input.is_action_just_pressed("ui_accept"): # Enter або Space
-		if ray_cast.is_colliding():
-			var collider = ray_cast.get_collider()
-			if collider.has_method("interact"):
-				collider.interact()
-				
 func toggle_mouse_mode():
 	if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-		# Тут можна викликати відкриття меню: get_tree().paused = true
 	else:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-		# Тут можна закрити меню: get_tree().paused = false

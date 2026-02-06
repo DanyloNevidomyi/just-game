@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bjd6weygrgvc8"]
 
+[ext_resource type="Script" uid="uid://c3mxoh4vqelq5" path="res://scene/slot_machine.gd" id="1_cgo26"]
 [ext_resource type="Script" uid="uid://broq08i0ne8sl" path="res://script/3d_button.gd" id="1_oebtt"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_haeiw"]
@@ -11,7 +12,9 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k77ap"]
 albedo_color = Color(1, 0.1254902, 0, 1)
 
-[node name="Automat" type="StaticBody3D" unique_id=1768851604]
+[node name="Automat" type="StaticBody3D" unique_id=1768851604 node_paths=PackedStringArray("start_button")]
+script = ExtResource("1_cgo26")
+start_button = NodePath("Button")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1756939508]
 shape = SubResource("BoxShape3D_haeiw")
