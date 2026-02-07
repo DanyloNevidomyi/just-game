@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://s1ineixeqcne" path="res://pics/ebaka2.png" id="2_ga5te"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fy5us"]
-size = Vector2(120, 175)
+size = Vector2(120, 172.1485)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mrqeg"]
 size = Vector2(88, 127)
@@ -13,6 +13,7 @@ size = Vector2(88, 127)
 script = ExtResource("1_mrqeg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1724714493]
+position = Vector2(0, -0.9937483)
 scale = Vector2(0.697, 0.697)
 shape = SubResource("RectangleShape2D_fy5us")
 
