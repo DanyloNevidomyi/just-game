@@ -12,9 +12,19 @@ sky_material = SubResource("ProceduralSkyMaterial_f24su")
 background_mode = 2
 sky = SubResource("Sky_eqhe0")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_f24su"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g0iv5"]
+albedo_color = Color(0.36862746, 0.84313726, 0.36862746, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_eqhe0"]
+material = SubResource("StandardMaterial3D_g0iv5")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f24su"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4j7jg"]
+albedo_color = Color(0.23137255, 0.18039216, 0.36862746, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_v1xgs"]
+material = SubResource("StandardMaterial3D_4j7jg")
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_f24su"]
 bounce = 0.48
@@ -37,23 +47,23 @@ environment = SubResource("Environment_k77ap")
 [node name="Wall" type="StaticBody3D" parent="World" unique_id=21847210]
 transform = Transform3D(1, 0, 0, 0, 0.0005584518, 0.9999998, 0, -0.9999998, 0.0005584518, 0, 0, -4.9820843)
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="World/Wall" unique_id=1000933837]
+transform = Transform3D(10, 0, 0, 0, 0.10000001, 0, 0, 0, 10, 0, 0, 0)
+mesh = SubResource("BoxMesh_eqhe0")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="World/Wall" unique_id=663951717]
 transform = Transform3D(10, 0, 0, 0, 0.1, 0, 0, 0, 10, 0, 0, 0)
 shape = SubResource("BoxShape3D_f24su")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="World/Wall/CollisionShape3D" unique_id=1000933837]
-mesh = SubResource("BoxMesh_eqhe0")
-skeleton = NodePath("../..")
-
 [node name="Floor" type="StaticBody3D" parent="World" unique_id=1733413621]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="World/Floor" unique_id=1303372184]
+transform = Transform3D(10, 0, 0, 0, 0.1, 0, 0, 0, 10, 0, 0, 0)
+mesh = SubResource("BoxMesh_v1xgs")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="World/Floor" unique_id=1941751925]
 transform = Transform3D(10, 0, 0, 0, 0.1, 0, 0, 0, 10, 0, 0, 0)
 shape = SubResource("BoxShape3D_f24su")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="World/Floor/CollisionShape3D" unique_id=1303372184]
-mesh = SubResource("BoxMesh_eqhe0")
-skeleton = NodePath("../..")
 
 [node name="Ball" type="RigidBody3D" parent="World" unique_id=1692241218]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.9143004, -4.2513547)
