@@ -13,6 +13,7 @@ emission = Color(0.65882355, 0.65882355, 0, 1)
 material = SubResource("StandardMaterial3D_eheji")
 
 [node name="Player" type="CharacterBody3D" unique_id=2137736361]
+physics_interpolation_mode = 1
 script = ExtResource("1_qdxyt")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1022271636]

@@ -31,16 +31,28 @@ func _unhandled_input(event):
 				collider.interact()
 
 # Фізика тільки для руху тіла
-func _physics_process(_delta):
+const ACCEL = 10.0  # Коефіцієнт прискорення
+const FRICTION = 15.0 # Коефіцієнт гальмування
+
+func _physics_process(delta):
+# 1. Отримуємо вектор вводу
 	var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+
+# 2. Визначаємо напрямок відносно повороту голови
 	var direction = (head.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	
+
+# 3. Розраховуємо цільову швидкість
+	var target_velocity = direction * SPEED
+
+# 4. Плавна зміна швидкості
 	if direction:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
+		# Прискорюємось до цільової швидкості
+		velocity.x = lerp(velocity.x, target_velocity.x, ACCEL * delta)
+		velocity.z = lerp(velocity.z, target_velocity.z, ACCEL * delta)
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
+		# Плавно зупиняємось (тертя)
+		velocity.x = lerp(velocity.x, 0.0, FRICTION * delta)
+		velocity.z = lerp(velocity.z, 0.0, FRICTION * delta)
 
 	move_and_slide()
 
