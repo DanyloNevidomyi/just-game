@@ -6,7 +6,7 @@ var speed = 150.0
 # Отримуємо посилання на наш "GPS" (ноду, яку ми додали на Кроці 2)
 @onready var nav_agent := $NavigationAgent2D
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	# Якщо гравця немає - стоїмо
 	if !player:
 		return
@@ -26,4 +26,4 @@ func _physics_process(delta):
 # Тут твій старий код для вбивства (залиш його без змін)
 func _on_kill_zone_body_entered(body):
 	if body.name == "Player":
-		get_tree().change_scene_to_file("res://scene/game_over_scene.tscn")
+		get_tree().call_deferred("change_scene_to_file", "res://scene/game_over_scene.tscn")
