@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://dybgnsfbb7bjr"]
 
 [ext_resource type="Script" uid="uid://dlrfhwqlepg1c" path="res://script/3d_player.gd" id="1_qdxyt"]
-[ext_resource type="Script" uid="uid://g3138p2yi5fd" path="res://scene/ray_cast_3d.gd" id="2_4fnba"]
+[ext_resource type="Script" uid="uid://cnye5qk74w8qj" path="res://scene/head.gd" id="2_eheji"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_4fnba"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_f24su"]
 
@@ -16,20 +18,30 @@ material = SubResource("StandardMaterial3D_eheji")
 physics_interpolation_mode = 1
 script = ExtResource("1_qdxyt")
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=145391666]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1701821, 0)
+mesh = SubResource("CapsuleMesh_4fnba")
+skeleton = NodePath("../CollisionShape3D")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1022271636]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1701821, 0)
 shape = SubResource("CapsuleShape3D_f24su")
 
 [node name="Head" type="Node3D" parent="." unique_id=2035365168]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6822315, 0)
+script = ExtResource("2_eheji")
 
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=1240140651]
 
 [node name="RayCast3D" type="RayCast3D" parent="Head/Camera3D" unique_id=635737479]
 target_position = Vector3(0, 0, -2)
-script = ExtResource("2_4fnba")
+collision_mask = 3
 
-[node name="Dot" type="MeshInstance3D" parent="." unique_id=876449359]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+[node name="Hand" type="Node3D" parent="Head/Camera3D" unique_id=611967741]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.103930116, -1.5657407)
+
+[node name="Dot" type="MeshInstance3D" parent="Head/Camera3D/Hand" unique_id=876449359]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 1.6686549, -2.1550648)
 top_level = true
 mesh = SubResource("SphereMesh_xvqcx")
+skeleton = NodePath("../../../..")
