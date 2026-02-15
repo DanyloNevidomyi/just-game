@@ -33,8 +33,15 @@ func _unhandled_input(event):
 # Фізика тільки для руху тіла
 const ACCEL = 10.0  # Коефіцієнт прискорення
 const FRICTION = 15.0 # Коефіцієнт гальмування
+var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
+
 
 func _physics_process(delta):
+	
+	if not is_on_floor():
+		velocity.y -= gravity * delta
+	else:
+		velocity.y = 0 # Обнуляємо, щоб не накопичувалась від'ємна швидкість
 # 1. Отримуємо вектор вводу
 	var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 
