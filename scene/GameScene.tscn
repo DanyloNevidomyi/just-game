@@ -45,24 +45,13 @@ metallic = 0.4
 environment = SubResource("Environment_k77ap")
 
 [node name="Wall" type="StaticBody3D" parent="World" unique_id=21847210]
-transform = Transform3D(1, 0, 0, 0, 0.0005583223, 0.58478415, 0, -0.99976796, 0.00032657382, 0, 2.5450306, -4.9820843)
+transform = Transform3D(1, 0, 0, 0, 0.0005584518, 0.9999998, 0, -0.9999998, 0.0005584518, 0, 0, -4.9820843)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="World/Wall" unique_id=1000933837]
 transform = Transform3D(10, 0, 0, 0, 0.10000001, 0, 0, 0, 10, 0, 0, 0)
 mesh = SubResource("BoxMesh_eqhe0")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="World/Wall" unique_id=663951717]
-transform = Transform3D(10, 0, 0, 0, 0.1, 0, 0, 0, 10, 0, 0, 0)
-shape = SubResource("BoxShape3D_f24su")
-
-[node name="Wall2" type="StaticBody3D" parent="World" unique_id=1652843841]
-transform = Transform3D(-4.3711392e-08, -0.9997683, 0, 0.00055832276, -2.4399396e-11, 0.34197256, -0.99976856, 4.3691134e-08, 0.00019097529, 5.050286, 0.38472772, -0.7988868)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="World/Wall2" unique_id=1166338807]
-transform = Transform3D(10, 0, 0, 0, 0.10000001, 0, 0, 0, 10, 0, 0, 0)
-mesh = SubResource("BoxMesh_eqhe0")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Wall2" unique_id=602399243]
 transform = Transform3D(10, 0, 0, 0, 0.1, 0, 0, 0, 10, 0, 0, 0)
 shape = SubResource("BoxShape3D_f24su")
 
@@ -76,13 +65,13 @@ mesh = SubResource("BoxMesh_v1xgs")
 transform = Transform3D(10, 0, 0, 0, 0.1, 0, 0, 0, 10, 0, 0, 0)
 shape = SubResource("BoxShape3D_f24su")
 
-[node name="Ball" type="RigidBody3D" parent="World" unique_id=1692241218 groups=["pickable"]]
+[node name="Ball" type="RigidBody3D" parent="World" unique_id=1692241218]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.9143004, -4.2513547)
 mass = 23.21
 physics_material_override = SubResource("PhysicsMaterial_f24su")
 inertia = Vector3(0, 61.64, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Ball" unique_id=324508091 groups=["pickable"]]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Ball" unique_id=324508091]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.46224165, 0)
 shape = SubResource("SphereShape3D_k77ap")
 
