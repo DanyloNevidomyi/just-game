@@ -9,8 +9,8 @@ var grabbed_object:RigidBody3D= null
 
 
 
-
-const SPEED = 5.0
+var SPRINT = 10.0
+var SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 
 var MOUSE_SENS:float = 0.003
@@ -24,7 +24,13 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-
+	
+	if Input.is_action_pressed("sprint"):
+		SPEED = SPRINT
+	else:
+		SPEED = 5
+	
+	
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY

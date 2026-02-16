@@ -47,4 +47,4 @@ func _on_h_slider_value_changed(value: float) -> void:
 
 
 func _on_start_2_pressed() -> void:
-	get_tree().change_scene_to_file("res://scene/main_game_world.tscn")
+	get_tree().change_scene_to_file("res://scene/new3d/main_game_world.tscn")

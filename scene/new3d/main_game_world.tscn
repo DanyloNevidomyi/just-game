@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://coum00pmchjtd" path="res://pics/128x128/Gray/Prototype_Grid_Gray_02-128x128.png" id="1_bmnju"]
 [ext_resource type="PackedScene" uid="uid://c3i7183irsire" path="res://scene/new3d/player.tscn" id="2_bmnju"]
 [ext_resource type="PackedScene" uid="uid://7eifdlpd4omg" path="res://scene/new3d/stick.tscn" id="3_thbqf"]
+[ext_resource type="PackedScene" uid="uid://dvrr03y4r0sl6" path="res://Campfire.tscn" id="4_wr0g5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wr0g5"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -47,34 +48,37 @@ size = Vector3(20, 1, 10)
 
 [node name="Player" parent="." unique_id=1316984179 instance=ExtResource("2_bmnju")]
 
-[node name="RigidBox" parent="." unique_id=111086348 instance=ExtResource("3_thbqf")]
+[node name="RigidBox" parent="." unique_id=111086348 groups=["flameable"] instance=ExtResource("3_thbqf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.098498, -3.4230433)
 collision_mask = 5
 
-[node name="RigidBox2" parent="." unique_id=1282489353 instance=ExtResource("3_thbqf")]
+[node name="RigidBox2" parent="." unique_id=1282489353 groups=["flameable"] instance=ExtResource("3_thbqf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7050829, 2.098498, -3.4230433)
 collision_mask = 5
 
-[node name="RigidBox3" parent="." unique_id=624538559 instance=ExtResource("3_thbqf")]
+[node name="RigidBox3" parent="." unique_id=624538559 groups=["flameable"] instance=ExtResource("3_thbqf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1552191, 2.098498, -3.4230433)
 collision_mask = 5
 
-[node name="RigidBox4" parent="." unique_id=1475909852 instance=ExtResource("3_thbqf")]
+[node name="RigidBox4" parent="." unique_id=1475909852 groups=["flameable"] instance=ExtResource("3_thbqf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45013618, 2.098498, -3.4230433)
 collision_mask = 5
 
-[node name="RigidBox5" parent="." unique_id=1085122877 instance=ExtResource("3_thbqf")]
+[node name="RigidBox5" parent="." unique_id=1085122877 groups=["flameable"] instance=ExtResource("3_thbqf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.37658405, 2.098498, -3.4230433)
 collision_mask = 5
 
-[node name="RigidBox6" parent="." unique_id=1286873159 instance=ExtResource("3_thbqf")]
+[node name="RigidBox6" parent="." unique_id=1286873159 groups=["flameable"] instance=ExtResource("3_thbqf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.081667, 2.098498, -3.4230433)
 collision_mask = 5
 
-[node name="RigidBox7" parent="." unique_id=1187294393 instance=ExtResource("3_thbqf")]
+[node name="RigidBox7" parent="." unique_id=1187294393 groups=["flameable"] instance=ExtResource("3_thbqf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4993176, 2.098498, -3.4230433)
 collision_mask = 5
 
-[node name="RigidBox8" parent="." unique_id=2079113765 instance=ExtResource("3_thbqf")]
+[node name="RigidBox8" parent="." unique_id=2079113765 groups=["flameable"] instance=ExtResource("3_thbqf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7942348, 2.098498, -3.4230433)
 collision_mask = 5
+
+[node name="Campfire" parent="." unique_id=1143261815 instance=ExtResource("4_wr0g5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.957926, 0, 1.893259)
