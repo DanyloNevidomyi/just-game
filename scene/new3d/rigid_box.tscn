@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://7eifdlpd4omg"]
+
+[ext_resource type="Script" uid="uid://cd8dgj4qe0yym" path="res://script/new3dScripts/rigid_box.gd" id="1_7g21c"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uw6j7"]
+size = Vector3(0.2, 0.2, 0.2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7g21c"]
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7g21c"]
+material = SubResource("StandardMaterial3D_7g21c")
+size = Vector3(0.2, 0.2, 0.2)
+
+[node name="RigidBox" type="RigidBody3D" unique_id=111086348]
+collision_layer = 4
+script = ExtResource("1_7g21c")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1398941195]
+shape = SubResource("BoxShape3D_uw6j7")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=592610825]
+mesh = SubResource("BoxMesh_7g21c")

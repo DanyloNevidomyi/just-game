@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://dh0tlfxk17b0a"]
+
+[ext_resource type="Texture2D" uid="uid://coum00pmchjtd" path="res://pics/128x128/Gray/Prototype_Grid_Gray_02-128x128.png" id="1_bmnju"]
+[ext_resource type="PackedScene" uid="uid://c3i7183irsire" path="res://scene/new3d/player.tscn" id="2_bmnju"]
+[ext_resource type="PackedScene" uid="uid://7eifdlpd4omg" path="res://scene/new3d/rigid_box.tscn" id="3_thbqf"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wr0g5"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_w4pjm"]
+sky_material = SubResource("ProceduralSkyMaterial_wr0g5")
+
+[sub_resource type="Environment" id="Environment_cpg5j"]
+background_mode = 2
+sky = SubResource("Sky_w4pjm")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bmnju"]
+albedo_texture = ExtResource("1_bmnju")
+uv1_triplanar = true
+texture_filter = 4
+
+[node name="MainGameWorld" type="Node3D" unique_id=76195714]
+
+[node name="Enviroment" type="Node" parent="." unique_id=2028307305]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Enviroment" unique_id=488998982]
+environment = SubResource("Environment_cpg5j")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Enviroment" unique_id=1040147789]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=279290572]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+material_override = SubResource("StandardMaterial3D_bmnju")
+use_collision = true
+size = Vector3(20, 1, 20)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D" unique_id=673176856]
+transform = Transform3D(0.1, 0, 0, 0, 1, 0, 0, 0, 0.2, -2, 1, -7)
+material_override = SubResource("StandardMaterial3D_bmnju")
+use_collision = true
+size = Vector3(20, 1, 10)
+
+[node name="Player" parent="." unique_id=1316984179 instance=ExtResource("2_bmnju")]
+
+[node name="RigidBox" parent="." unique_id=111086348 instance=ExtResource("3_thbqf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.098498, -3.4230433)
