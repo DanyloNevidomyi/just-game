@@ -24,6 +24,7 @@ shape = SubResource("CapsuleShape3D_gc8d7")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=553440145]
+physics_interpolation_mode = 1
 
 [node name="ObjectGrabberShapeCast" type="ShapeCast3D" parent="Head" unique_id=148857139]
 shape = SubResource("SphereShape3D_fa2ms")

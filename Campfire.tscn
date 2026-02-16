@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://dvrr03y4r0sl6"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_wyony"]
+lifetime_randomness = 0.02
+emission_shape = 2
+emission_sphere_radius = 3.0
+gravity = Vector3(0, 1, 0)
+linear_accel_min = -1.0000023
+linear_accel_max = 0.99999774
+radial_accel_min = -0.5000022
+radial_accel_max = 0.99999774
+tangential_accel_min = -2.2351742e-06
+tangential_accel_max = 0.99999774
+damping_max = 1.0
+scale_min = 0.099999994
+scale_max = 0.29999998
+
+[sub_resource type="Gradient" id="Gradient_hkl62"]
+colors = PackedColorArray(1, 1, 0, 1, 1, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_r3b3c"]
+gradient = SubResource("Gradient_hkl62")
+fill = 2
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xbt0b"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+shading_mode = 0
+albedo_texture = SubResource("GradientTexture2D_r3b3c")
+
+[sub_resource type="QuadMesh" id="QuadMesh_mvx2h"]
+material = SubResource("StandardMaterial3D_xbt0b")
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_1c75a"]
+height = 0.75
+
+[sub_resource type="BoxMesh" id="BoxMesh_8ysen"]
+
+[node name="Campfire" type="RigidBody3D" unique_id=1143261815]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=1768421216]
+transform = Transform3D(0.09, 0, 0, 0, 0.10000001, 0, 0, 0, 0.09, 0, 0.5, 0)
+amount = 2
+amount_ratio = 0.5
+lifetime = 1.5
+transform_align = 1
+process_material = SubResource("ParticleProcessMaterial_wyony")
+draw_pass_1 = SubResource("QuadMesh_mvx2h")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1639852905]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.475, 0)
+shape = SubResource("CylinderShape3D_1c75a")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1806954982]
+transform = Transform3D(1, 0, 0, 0, 0.3, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_8ysen")

@@ -58,7 +58,9 @@ func _physics_process(delta: float) -> void:
 
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventMouseMotion:
+	if event.is_action_pressed("ui_cancel"):
+		toggle_mouse_mode()
+	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		var y_rot: float = -event.relative.x *MOUSE_SENS
 		rotate_y(y_rot) 
 		var x_tilt: float = -event.relative.y *MOUSE_SENS
@@ -87,6 +89,10 @@ func throw_object():
 	grabbed_object.apply_impulse((-head.global_basis.z*5.0)+Vector3(0.0, 1.0, 0.0))
 	grabbed_object = null
 	
+### TEST AREA ###
 
-		
-		
+func toggle_mouse_mode():
+	if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	else:
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED

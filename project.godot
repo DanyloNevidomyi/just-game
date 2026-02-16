@@ -32,7 +32,7 @@ SceneChanger="*uid://kjasvoa35ra0"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/size/mode=3
+window/size/mode=4
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
@@ -121,5 +121,7 @@ jump={
 
 [physics]
 
+common/physics_ticks_per_second=120
+common/max_physics_steps_per_frame=16
 common/physics_jitter_fix=0.0
 common/physics_interpolation=true
