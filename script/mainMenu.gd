@@ -44,3 +44,7 @@ func _on_h_slider_value_changed(value: float) -> void:
 	var bus_index = AudioServer.get_bus_index("SFX")
 	AudioServer.set_bus_volume_db(bus_index, linear_to_db(value))
 	AudioServer.set_bus_mute(bus_index, value < 0.01)
+
+
+func _on_start_2_pressed() -> void:
+	get_tree().change_scene_to_file("res://scene/new3d/main_game_world.tscn")

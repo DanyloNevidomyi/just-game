@@ -5,7 +5,7 @@ var speed = 150.0
 
 # Отримуємо посилання на наш "GPS" (ноду, яку ми додали на Кроці 2)
 @onready var nav_agent := $NavigationAgent2D
-
+# WHAT A CODE 🤣🤣🤣🤣🤣🤣🤣🤣🤣🤣🤣🤣🤣🤣🤣🤣
 func _physics_process(_delta):
 	# Якщо гравця немає - стоїмо
 	if !player:

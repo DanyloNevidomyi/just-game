@@ -48,6 +48,12 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 35
 text = "Start"
 
+[node name="Start2" type="Button" parent="ButtonManager" unique_id=1057286027 groups=["menu_buttons"]]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Work in progress"
+
 [node name="Jumpscare" type="Button" parent="ButtonManager" unique_id=416632850 groups=["menu_buttons"]]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
@@ -94,6 +100,7 @@ max_distance = 19955.0
 bus = &"SFX"
 
 [connection signal="pressed" from="ButtonManager/Start" to="ButtonManager" method="_on_start_pressed"]
+[connection signal="pressed" from="ButtonManager/Start2" to="ButtonManager" method="_on_start_2_pressed"]
 [connection signal="pressed" from="ButtonManager/Jumpscare" to="ButtonManager" method="_on_jumpscare_pressed"]
 [connection signal="pressed" from="ButtonManager/Quit" to="ButtonManager" method="_on_quit_pressed"]
 [connection signal="value_changed" from="ButtonManager/HSlider" to="ButtonManager" method="_on_h_slider_value_changed"]
