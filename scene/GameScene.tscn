@@ -65,9 +65,9 @@ mesh = SubResource("BoxMesh_v1xgs")
 transform = Transform3D(10, 0, 0, 0, 0.1, 0, 0, 0, 10, 0, 0, 0)
 shape = SubResource("BoxShape3D_f24su")
 
-[node name="Ball" type="RigidBody3D" parent="World" unique_id=1692241218]
+[node name="Ball" type="RigidBody3D" parent="World" unique_id=1692241218 groups=["pickable"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.9143004, -4.2513547)
-mass = 23.21
+mass = 4.0
 physics_material_override = SubResource("PhysicsMaterial_f24su")
 inertia = Vector3(0, 61.64, 0)
 
@@ -75,8 +75,10 @@ inertia = Vector3(0, 61.64, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.46224165, 0)
 shape = SubResource("SphereShape3D_k77ap")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="World/Ball/CollisionShape3D" unique_id=1006706304]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="World/Ball" unique_id=1006706304]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.46224165, 0)
 mesh = SubResource("SphereMesh_haeiw")
+skeleton = NodePath("../CollisionShape3D")
 surface_material_override/0 = SubResource("StandardMaterial3D_b5kf5")
 
 [node name="Slot_machine" parent="World" unique_id=1768851604 instance=ExtResource("1_g0iv5")]
