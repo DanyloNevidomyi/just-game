@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c3i7183irsire" path="res://scene/new3d/player.tscn" id="2_bmnju"]
 [ext_resource type="PackedScene" uid="uid://7eifdlpd4omg" path="res://scene/new3d/stick.tscn" id="3_thbqf"]
 [ext_resource type="PackedScene" uid="uid://dvrr03y4r0sl6" path="res://Campfire.tscn" id="4_wr0g5"]
+[ext_resource type="PackedScene" uid="uid://b1olw6a40s3hc" path="res://scene/hud/hud.tscn" id="5_7grbf"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wr0g5"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -82,3 +83,5 @@ collision_mask = 5
 
 [node name="Campfire" parent="." unique_id=1143261815 instance=ExtResource("4_wr0g5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.957926, 0, 1.893259)
+
+[node name="Hud" parent="." unique_id=957938207 instance=ExtResource("5_7grbf")]

@@ -27,6 +27,7 @@ buses/default_bus_layout="res://sound/default_bus_layout.tres"
 
 AchievementManager="*uid://cw2hno8rlqapp"
 SceneChanger="*uid://kjasvoa35ra0"
+GameState="*uid://dd0lyw2elcrxx"
 
 [display]
 

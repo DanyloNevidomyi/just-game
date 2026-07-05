@@ -9,7 +9,7 @@ var grabbed_object:RigidBody3D= null
 
 
 
-var SPRINT = 10.0
+var SPRINT = 8.0
 var SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 
