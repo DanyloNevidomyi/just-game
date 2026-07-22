@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://dosc8jo12exwq"]
+
+[ext_resource type="Script" uid="uid://dde07woxoabu5" path="res://scene/devScenes/scene_manager.gd" id="1_cwgra"]
+
+[node name="SceneManager" type="Control" unique_id=235625513]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cwgra")
+
+[node name="GameScene" type="Button" parent="." unique_id=1396587877]
+layout_mode = 0
+offset_left = 275.0
+offset_top = 293.0
+offset_right = 625.0
+offset_bottom = 435.0
+text = "Game Scene old"
+
+[node name="MainWorldScene" type="Button" parent="." unique_id=645533738]
+layout_mode = 0
+offset_left = 707.0
+offset_top = 297.0
+offset_right = 1057.0
+offset_bottom = 439.0
+text = "World Scene with campfire"
+
+[node name="level1" type="Button" parent="." unique_id=253978870]
+layout_mode = 0
+offset_left = 1207.0
+offset_top = 287.0
+offset_right = 1557.0
+offset_bottom = 429.0
+text = "2d level 1 Danylo ver."
+
+[node name="level1_redone" type="Button" parent="." unique_id=2047084203]
+layout_mode = 0
+offset_left = 272.0
+offset_top = 498.0
+offset_right = 622.0
+offset_bottom = 640.0
+text = "2d level1 Vlad ver."
+
+[node name="Button5" type="Button" parent="." unique_id=565016384]
+layout_mode = 0
+offset_left = 718.0
+offset_top = 504.0
+offset_right = 1068.0
+offset_bottom = 646.0
+
+[node name="Button6" type="Button" parent="." unique_id=1926929985]
+layout_mode = 0
+offset_left = 1211.0
+offset_top = 510.0
+offset_right = 1561.0
+offset_bottom = 652.0
+
+[node name="Button7" type="Button" parent="." unique_id=1136301947]
+layout_mode = 0
+offset_left = 481.0
+offset_top = 743.0
+offset_right = 831.0
+offset_bottom = 885.0
+
+[node name="MainMenu" type="Button" parent="." unique_id=1309754190]
+layout_mode = 0
+offset_left = 955.0
+offset_top = 754.0
+offset_right = 1305.0
+offset_bottom = 896.0
+text = "Main menu"
+
+[connection signal="pressed" from="GameScene" to="." method="_on_game_scene_pressed"]
+[connection signal="pressed" from="MainWorldScene" to="." method="_on_main_world_scene_pressed"]
+[connection signal="pressed" from="level1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="level1_redone" to="." method="_on_level_1_redone_pressed"]
+[connection signal="pressed" from="MainMenu" to="." method="_on_main_menu_pressed"]

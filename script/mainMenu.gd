@@ -30,7 +30,8 @@ func _on_jumpscare_pressed() -> void:
 	$"../VideoStreamPlayer".paused = false
 
 func _on_quit_pressed() -> void:
-	get_tree().quit()
+	#get_tree().quit()
+	get_tree().change_scene_to_file("res://scene/devScenes/sceneManager.tscn")
 	
 func set_buttons_disabled(is_disabled: bool) -> void:
 	for node in get_tree().get_nodes_in_group("menu_buttons"):
